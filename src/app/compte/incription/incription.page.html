@@ -1,0 +1,59 @@
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+          <div class="ion-text-center">
+            <h1>Inscription</h1>
+            <em>Veuillez remplir soigneusement le formulaire.</em>
+          </div>
+          <div class="ion-padding">
+            <h4 class="ion-color-danger">{{ errorMessage }}</h4>
+            <ion-item id="rounded">
+              <ion-label position="floating">Prénom</ion-label>
+              <ion-input type="text" formControlName="prenom"></ion-input>
+              <ion-icon name="person-outline" slot="end" size="small"></ion-icon>
+            </ion-item>
+            <ion-item id="rounded">
+              <ion-label position="floating">Nom</ion-label>
+              <ion-input type="text" formControlName="nom"></ion-input>
+              <ion-icon name="person-outline" slot="end" size="small"></ion-icon>
+            </ion-item>
+            <ion-item id="rounded">
+              <ion-label position="floating">Pseudo</ion-label>
+              <ion-input type="text" formControlName="username"></ion-input>
+              <ion-icon name="person-outline" slot="end" size="small"></ion-icon>
+            </ion-item>
+            <ion-item id="rounded">
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="text" formControlName="email"></ion-input>
+              <ion-icon name="mail-outline" slot="end" size="small"></ion-icon>
+            </ion-item>
+            <ion-item id="rounded">
+              <ion-label position="floating">Mot de passe</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+              <ion-icon name="lock-closed-outline" slot="end" size="small"></ion-icon>
+            </ion-item>
+            <ion-item id="rounded">
+              <ion-label position="floating">Téléphone</ion-label>
+              <ion-input type="text" formControlName="telephone"></ion-input>
+              <ion-icon name="call-outline" slot="end" size="small"></ion-icon>
+            </ion-item>
+            <ion-item id="rounded">
+              <ion-label position="floating">Adresse</ion-label>
+              <ion-input type="text" formControlName="adresse"></ion-input>
+              <ion-icon name="navigate-outline" slot="end" size="small"></ion-icon>
+            </ion-item>
+          </div>
+
+          <div class="ion-padding">
+            <ion-button size="medium" type="submit" color="success" expand="block" [disabled]="signupForm.invalid">Valider</ion-button>
+          </div>
+          <div class="ion-padding connect-link">
+            <a routerLink="/tabs/compte/connect">Connectez-vous</a>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

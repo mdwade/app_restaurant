@@ -1,0 +1,127 @@
+<ion-header translucent no-border>
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center" style="font-weight: bolder">Liste commandes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-card class="ion-text-center">
+          <ion-card-content *ngIf="authAttribute[1] == 'Authenticated'">
+            <h2>Mes commandes</h2>
+          </ion-card-content>
+          <ion-card-content *ngIf="authAttribute[1] == 'Admin'">
+            <h2>Commandes du jour</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+      <div *ngIf="authAttribute[1] == 'Authenticated'">
+        <ion-item *ngIf="getUserCmd() == 0">
+          <ion-card>
+            <ion-card-content>
+              Aucune commande effectuée
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+        <div *ngFor="let commande of commandes" style="margin-right: 4.5%">
+          <div *ngIf="user.id == commande.user.id">
+            <ion-card>
+              <ion-card-header style="padding-left: 25px">
+                <ion-card-subtitle>Plat</ion-card-subtitle>
+                <ion-card-title>{{commande.plat.nom}}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="9">
+                      <p>
+                        Date : {{currentDate == commande.date_commande ? 'Aujourd\'hui' : commande.date_commande}}
+                        <br>
+                        Prix : {{commande.plat.prix}} FCFA
+                      </p>
+                    </ion-col>
+                    <ion-col size="3">
+                      <ion-button *ngIf="currentDate == commande.date_commande" color="danger" class="ion-float-right" (click)="onRemove(commande.id)">Annuler</ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="authAttribute[1] == 'Admin'">
+        <ion-item *ngIf="getToday() == 0">
+          <ion-card>
+            <ion-card-content>
+              <em style="color: lightcoral">Aucune commande.</em>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+        <div *ngFor="let commande of commandes" class="plat">
+          <ion-item *ngIf="currentDate == commande.date_commande">
+            <ion-card>
+              <ion-card-header>
+                <ion-card-subtitle>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="5">
+                        Plat: {{commande.plat.nom}} <br>
+                        Prix: {{commande.plat.prix}} FCFA
+                      </ion-col>
+                      <ion-col size="7">
+                        Propriétaire: {{commande.user.prenom}} {{commande.user.nom}}
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </ion-item>
+        </div>
+        <br><br><br><br>
+        <ion-item>
+          <ion-card>
+            <ion-card-content class="ion-text-center">
+              <h2>Historique des commandes</h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+
+        <ion-item *ngIf="commandes.length == 0">
+          <ion-card>
+            <ion-card-content>
+              <em style="color: lightcoral">Aucune commande aujourd'hui.</em>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+
+        <div *ngFor="let commande of commandes">
+          <ion-item>
+            <ion-card color="light" style="opacity: 0.5">
+              <ion-card-header>
+                <ion-card-subtitle>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="5">
+                        Plat: {{commande.plat.nom}} <br>
+                        Prix: {{commande.plat.prix}} FCFA <br>
+                        Date : {{currentDate == commande.date_commande ? 'Aujourd\'hui' : commande.date_commande}}
+                      </ion-col>
+                      <ion-col size="7">
+                        Propriétaire: {{commande.user.prenom}} {{commande.user.nom}}
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-card-subtitle>
+              </ion-card-header>
+            </ion-card>
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

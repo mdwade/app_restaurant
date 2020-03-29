@@ -1,0 +1,167 @@
+ion-title {
+  font-weight: bolder;
+}
+
+ion-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+ion-toolbar {
+  --background: transparent;
+}
+
+.edit-btn {
+  ion-fab {
+    padding: 2%;
+    border-radius: 100%;
+    margin-top: 1%;
+    left: 70%;
+
+    ion-fab-button {
+      width: 40px;
+      height: 40px;
+      color: black;
+    }
+  }
+}
+
+.card {
+  margin: 0 auto;
+
+  .header {
+    height: 200px;
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      position: relative;
+      margin: 10% auto;
+
+      img {
+        width: 140px;
+        height: 140px;
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        bottom: calc(-1*(80px + 4px));
+        background-color: #fff;
+      }
+
+    }
+  }
+}
+
+ion-fab-button {
+  width: 40px;
+  height: 40px;
+}
+
+.card-body {
+  background-color: #ffffff;
+  padding: 5px;
+  height: calc(100vh - (200px + 56px));
+  overflow: hidden;
+
+  .user-meta {
+    padding-top: 40px;
+    margin-top: 10%;
+
+    .playername {
+      font-size: 24px;
+      font-weight: 600;
+      color: #303940;
+    }
+
+    .country {
+      font-size: 90%;
+      color: #949ea6;
+      text-transform: uppercase;
+      margin: 0 auto;
+    }
+  }
+}
+
+ion-row {
+  width: 95%;
+  font-size: 80%;
+  margin-top: 2%;
+}
+
+ion-grid {
+  box-shadow: 2px 2px 2px 2px #f2f2f2;
+  background-color: lightgrey;
+  border-radius: 5px
+}
+
+@media (min-width: 240px) and (max-width: 812px) {
+  .card {
+
+    .header {
+      height: 40%;
+      .avatar {
+        margin: 5% auto;
+      }
+    }
+  }
+
+  .sw-button {
+    width: 40%;
+  }
+
+  .card-body {
+    height: calc(100vh - (40% + 2%));
+  }
+
+  ion-row {
+    width: 100%;
+    left: 10%;
+    right: 10%;
+    border-radius: 5px;
+
+    ion-icon{
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .edit-btn {
+    ion-fab {
+      margin-top: 0;
+      margin-left: 10px;
+      left: 60%;
+    }
+  }
+}
+
+.emailIcon {
+  background-color: orange;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.callIcon {
+  background-color: lightseagreen;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.addressIcon {
+  background-color: lightcoral;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.dataValue {
+  font-size: 15px;
+}
+
+
+

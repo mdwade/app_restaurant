@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center" style="font-weight: bolder">Ajouter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <ion-row class="ion-align-self-center">
+        <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+          <div class="ion-text-center">
+            <h1>Ajouter un plat</h1>
+          </div>
+          <div class="ion-padding">
+            <h4 class="ion-color-danger">{{ errorMessage }}</h4>
+            <ion-item id="rounded">
+              <ion-label position="floating">Plat</ion-label>
+              <ion-input type="text" formControlName="nom"></ion-input>
+            </ion-item>
+            <ion-item id="rounded">
+              <ion-label position="floating">Prix</ion-label>
+              <ion-input type="number" formControlName="prix"></ion-input>
+            </ion-item>
+            <ion-item id="rounded">
+              <ion-label position="floating">Description</ion-label>
+              <ion-textarea formControlName="description"></ion-textarea>
+            </ion-item>
+          </div>
+          <div class="ion-padding">
+            <ion-button type="submit" color="success" size="medium" expand="block" [disabled]="addForm.invalid">VALIDER</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" routerLink="/tabs/menu/plats">
+    <ion-fab-button color="light">
+      <ion-icon name="arrow-back-outline">
+        <a routerLink="{{previousPage}}"></a>
+      </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

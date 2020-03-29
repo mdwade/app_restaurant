@@ -1,0 +1,13 @@
+{
+  "name": "restaurant_app1",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "proxies": [
+  	{
+  		"path": "",
+  		"proxyUrl": "http://172.20.10.2:1337"
+  	}
+  ]
+}

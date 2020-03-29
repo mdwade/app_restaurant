@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center" style="font-weight: bolder">Modifier le menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/tabs/menu/plats/ajouter">
+    <ion-button color="light">
+      <ion-icon name="add-outline"></ion-icon> Ajouter un plat
+    </ion-button>
+  </ion-fab>
+  <div>
+    <ion-list>
+      <ion-item *ngFor="let plat of plats">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              {{plat.nom}}
+            </ion-card-title>
+            <ion-fab horizontal="end" vertical="top">
+
+              <ion-button class="ion-float-right" color="danger" (click)="onDelete(plat.id)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+              <ion-button class="ion-float-right" color="success" (click)="onUpdatePlat(plat.id)">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+            </ion-fab>
+          </ion-card-header>
+          <ion-card-content>
+            {{plat.description}}
+            <ion-grid style="margin-left: -10px">
+              <ion-row>
+                <ion-col size="12">
+                  <div class="prix">
+                    <h4 class="ion-float-left">Prix : {{plat.prix}} F CFA</h4>
+                  </div>
+                </ion-col>
+                <ion-col size="3">
+                  <ion-button (click)="!inMenu(plat.id) ? onAdd(plat) : onRemove(plat.id)"
+                              *ngIf="!inMenu(plat.id)" color="success">
+                    AJOUTER
+                  </ion-button>
+
+                  <ion-button (click)="!inMenu(plat.id) ? onAdd(plat) : onRemove(plat.id)"
+                              *ngIf="inMenu(plat.id)" color="danger">
+                    SUPPRIMER
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

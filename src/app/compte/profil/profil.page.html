@@ -1,0 +1,56 @@
+<ion-header translucent no-border>
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center">Compte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" slot="fixed" >
+  <div class="card">
+    <div class="header">
+      <div class="avatar">
+        <img src="{{ currentUer.photo != null ? currentUer.photo : '../../../assets/user.png' }}" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="edit-btn">
+    <ion-fab>
+      <ion-fab-button color="none" [title]="'Modifier la photo'" (click)="onUpdatePic()">
+        <ion-icon name="pencil-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+  <div class="card-body ion-padding-end">
+    <div class="user-meta ion-text-center ion-padding-bottom">
+      <h3 class="playername">{{ currentUer.prenom }} {{ currentUer.nom }}</h3>
+    </div>
+    <ion-grid class="ion-align-self-center">
+      <ion-item-divider>
+        <ion-row class="ion-align-self-center">
+          <ion-col><ion-icon name="mail-outline" class="emailIcon"></ion-icon> <span class="dataValue"> {{ currentUer.email }}</span></ion-col>
+        </ion-row>
+      </ion-item-divider>
+
+      <ion-item-divider>
+        <ion-row class="phone ion-align-self-center">
+          <ion-col><ion-icon name="call-outline" class="callIcon"></ion-icon> <span class="dataValue"> {{ currentUer.telephone }}</span></ion-col>
+        </ion-row>
+      </ion-item-divider>
+
+      <ion-item-divider class="lastItemDivider">
+        <ion-row class="adresse ion-align-self-center">
+          <ion-col><ion-icon name="navigate-outline" class="addressIcon"></ion-icon> <span class="dataValue"> {{ currentUer.adresse }}</span></ion-col>
+        </ion-row>
+      </ion-item-divider>
+    </ion-grid>
+    <div class="ion-padding">
+      <ion-button size="small" color="light" expand="block" routerLink="modifier/{{currentUer.id}}"><ion-icon name="create"></ion-icon> MODIFIER MON PROFIL</ion-button>
+    </div>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="ion-align-self-center">
+    <ion-fab-button [title]="'Se deconnecter'" (click)="onSignOut()" color="danger"  size="small">
+      <ion-icon name="log-out"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center" style="font-weight: bolder">
+      Menu du jour
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <ion-list>
+      <ion-item *ngFor="let plat of menu_du_jour">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="7">
+                   Plat
+                  </ion-col>
+                  <ion-col size="5">
+                    Prix: {{plat.prix}} F CFA
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-subtitle>
+            <ion-card-title style="margin-left: 8px">
+              {{plat.nom}}
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content style="margin-left: 8px">
+            <p>
+              {{plat.description}}
+            </p>
+            <div class="prix">
+              <ion-button color="light" class="ion-float-right" *ngIf="token != null && role == 'Authenticated'" (click)="onCommande(plat)">COMMANDER</ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf="token != null && role == 'Admin'" routerLink="plats">
+    <ion-button color="light">
+      liste des plats
+    </ion-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="token != null && role == 'Admin'" routerLink="modifier-menu">
+    <ion-button color="light">
+      <ion-icon name="create-outline"></ion-icon> modifier le menu
+    </ion-button>
+  </ion-fab>
+</ion-content>

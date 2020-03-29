@@ -1,0 +1,60 @@
+ion-content {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 50%;
+  margin: 0 auto 0 0;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+$white-color: #fff;
+$height100: 100%;
+
+#rounded {
+  box-shadow: 2px 2px 2px 2px #dfdfdf;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+ion-grid {
+  width:100%;
+  height: $height100;
+  background: #dfdfdf;
+}
+
+ion-row {
+  height: $height100;
+}
+
+ion-col {
+  border: 1px solid #488aff;
+  background: $white-color;
+}
+
+ion-button {
+  //font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (min-width: 240px) and (max-width: 812px) {
+  ion-grid {
+    background: $white-color;
+    font-size: 80%;
+  }
+
+  ion-item {
+    width: 90%;
+    height: 90%;
+  }
+  ion-col {
+    border: none;
+  }
+}

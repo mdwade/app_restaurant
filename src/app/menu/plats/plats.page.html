@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center" style="font-weight: bolder">Plats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/tabs/menu/plats/ajouter">
+    <ion-button color="light">
+      <ion-icon name="add-outline"></ion-icon> Ajouter un plat
+    </ion-button>
+  </ion-fab>
+  <div class="plats">
+    <ion-list>
+      <ion-item *ngFor="let plat of plats">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="6">{{plat.nom}}</ion-col>
+                  <ion-col size="6">
+                    <ion-button class="ion-float-right" color="danger" (click)="onDelete(plat.id)">
+                      <ion-icon name="trash-outline"></ion-icon>
+                    </ion-button>
+                    <ion-button class="ion-float-right" color="success" routerLink="/tabs/menu/plats/modifier/{{plat.id}}">
+                      <ion-icon name="create-outline"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content style="margin-left: 8px">
+            <p>
+              {{plat.description}}
+            </p>
+            <div class="prix">
+              <h4 class="ion-float-left">Prix : {{plat.prix}} F CFA </h4>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

@@ -1,0 +1,24 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+ion-card {
+  width: 100%;
+}
+
+.prix{
+  h4 {
+    font-weight: bold;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  ion-button {
+    margin-bottom: 2%;
+  }
+}
+
+.plats {
+  margin-bottom: 10%;
+}
+
