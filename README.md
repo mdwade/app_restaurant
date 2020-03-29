@@ -42,7 +42,7 @@ Il nous est demandé de développer une application mobile avec ionic. Cette app
 > npm install
 ```
 
-##### NB: Pour changer l'adresse de l'API, ouvrir le projet, aller dans ```src/environments/environment.ts``` et changer la valeur de la variable ```API_URL```
+##### NB: Pour changer l'adresse de l'API(repository strapi_restaurant), ouvrir le projet, aller dans ```src/environments/environment.ts``` et changer la valeur de la variable ```API_URL```
 
 #### Lancer l'application avec la commande 
 ```
