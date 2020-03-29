@@ -1,5 +1,6 @@
 # Projet: développement d'une application pour restaurant avec IONIC
 
+##### # Cette application va consommer l'API strapi_restaurant
 ## Etudiant
 ```
 - Nom:      Wade
