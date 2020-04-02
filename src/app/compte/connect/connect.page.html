@@ -7,25 +7,25 @@
             <h1>Connexion</h1>
           </div>
           <div class="ion-padding">
-            <p class="ion-color-danger" style="text-align: center; color: lightcoral; margin-bottom: 20px">{{ errorMessage }}</p>
+            <p class="ion-color-danger" style="text-align: center; color: lightcoral; margin-bottom: 20px"> {{ errorMessage }} </p>
             <ion-item id="rounded">
-              <ion-label position="floating">Email ou Pseudo</ion-label>
+              <ion-label position="floating"> Email ou Pseudo </ion-label>
               <ion-input type="text" formControlName="email"></ion-input>
               <ion-icon name="person-outline" slot="end" size="small"></ion-icon>
             </ion-item>
 
             <ion-item id="rounded">
-              <ion-label position="floating">Mot de passe</ion-label>
+              <ion-label position="floating"> Mot de passe </ion-label>
               <ion-input type="password" formControlName="password"></ion-input>
               <ion-icon name="lock-closed-outline" slot="end" size="small"></ion-icon>
             </ion-item>
           </div>
 
           <div class="ion-padding">
-            <ion-button size="medium" type="submit" color="success" expand="block" [disabled]="connectForm.invalid">Se connecter</ion-button>
+            <ion-button size="medium" type="submit" color="success" expand="block" [disabled]="connectForm.invalid"> Se connecter </ion-button>
           </div>
           <div class="ion-padding connect-link" style="text-align: center">
-            <a routerLink="/tabs/compte/inscription" class="">S'inscrire</a>
+            <a routerLink="/tabs/compte/inscription" class=""> S'inscrire </a>
           </div>
         </ion-col>
       </ion-row>
