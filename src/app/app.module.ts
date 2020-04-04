@@ -19,12 +19,7 @@ import { FilePath } from '@ionic-native/file-path/ngx';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
-    StatusBar,
-    SplashScreen,
-    AuthGuard,
-    Camera,
-    File,
-    FilePath,
+    StatusBar, SplashScreen, AuthGuard, Camera, File, FilePath,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
