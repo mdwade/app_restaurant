@@ -43,3 +43,5 @@ Il nous est demandé de développer une application mobile avec ionic. Cette app
 ```
 > ionic serve
 ```
+
+#### Vous pouvez regarder la vidéo demo.mp4 
