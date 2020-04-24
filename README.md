@@ -1,12 +1,6 @@
 # Projet: développement d'une application pour restaurant avec IONIC
 
 ###### # Cette application va consommer l'API strapi_restaurant
-## Etudiant
-```
-- Nom:      Wade
-- Prénom:   Mouhamed Diop
-- Classe:   M2GLSI
-```
 
 ## Objectifs
 Il nous est demandé de développer une application mobile avec ionic. Cette application permet : <br>
